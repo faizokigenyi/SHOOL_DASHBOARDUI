@@ -1,4 +1,4 @@
-# Lama Dev School Management Dashboard
+# GONZALES SCHOOL MANAGEMENT SYSTEM
 
 ## Getting Started
 
