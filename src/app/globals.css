@@ -16,3 +16,6 @@
   color: black !important;
 }
 
+.rbc-btn-group:first-child{
+  display: none;
+}
