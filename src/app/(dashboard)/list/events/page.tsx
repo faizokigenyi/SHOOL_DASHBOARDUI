@@ -4,6 +4,7 @@ import TableSearch from "@/app/components/TableSearch";
 import { eventsData, role } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
+import FormModal from "@/app/components/FormModal";
 
 type Event = {
   id: number;
@@ -57,15 +58,11 @@ export default function EventListPage() {
       <td className="hidden md:table-cell">{item.endTime}</td>
       <td>
         <div className="flex items-center gap-2">
-          <Link href={`/list/classes/${item.id}`}>
-            <button className="w-7 h-7 items-center justify-center rounded-full bg-lamaSky">
-              <Image src="/edit.png" alt=" " width={16} height={16} />
-            </button>
-          </Link>
           {role === "admin" && (
-            <button className="w-7 h-7 items-center justify-center rounded-full bg-lamaPurple">
-              <Image src="/delete.png" alt=" " width={16} height={16} />
-            </button>
+            <>
+              <FormModal table="event" type="update" data={item} />
+              <FormModal table="event" type="delete" id={item.id} />
+            </>
           )}
         </div>
       </td>
